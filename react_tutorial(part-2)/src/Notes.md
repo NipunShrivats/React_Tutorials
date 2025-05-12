@@ -4,5 +4,5 @@
 <!-- 4. Navigation Bar -->
 <!-- 5. Building a NAv Bar -->
 <!-- 6. Active Link -->
-<!-- 7. -->
+<!-- 7. Error pages -->
 <!-- 8. -->
