@@ -10,14 +10,16 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import AppLayout from "./components/layout/AppLayout";
+import ErrorPage from "./pages/ErrorPage";
 // ---------------------------------------
 
-// 1. Normal routes
+// 1. Normal routes - V6.3
 export default function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <AppLayout />,
+      errorElement: <ErrorPage />,
       children: [
         { path: "/", element: <Home /> },
         { path: "/services", element: <Services /> },
