@@ -6,6 +6,6 @@
 <!-- 4. Navigation Bar -->
 <!-- 5. Building a NAv Bar -->
 <!-- 6. Active Link -->
-<!-- 7. Error pages - useRouteError-->
+<!-- 7. Error pages - useRouteError Hook-->
 <!-- 7.1. errorElement:- https://reactrouter.com/6.30.0/route/error-element -->
-<!-- 8. -->
+<!-- 8. useNavigate Hook-->
