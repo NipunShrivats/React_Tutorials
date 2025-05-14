@@ -10,3 +10,7 @@
 <!-- 7.1. "errorElement":- https://reactrouter.com/6.30.0/route/error-element -->
 <!-- 8. "useNavigate" Hook to move to prvious tab-->
 <!-- 9. "loaders" and "useLoaderData" Hook for fetching API-->
+<!-- 10. Global Loading states using "useNavigation" - [this is a different hook]
+https://reactrouter.com/6.30.0/hooks/use-navigation#navigationstate -->
+
+<!-- 11. Secure API: ENV Variables-->

@@ -1,10 +1,11 @@
 import React from "react";
+import ErrorPage from "../pages/ErrorPage";
 
 // made as a function and not a component
 export const getMoviesData = async () => {
   try {
     const response = await fetch(
-      "https://www.omdbapi.com/?i=tt3896198&apikey=3f5e058&s=titanic&page=1"
+      "https://www.omdbapi.com/?i=tt3896198&apikey=3f5e058&s=titan&page=1"
     );
     const data = await response.json();
     return data;

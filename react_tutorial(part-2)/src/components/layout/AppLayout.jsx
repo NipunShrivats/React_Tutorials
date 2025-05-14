@@ -3,8 +3,18 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
+import Loading from "./Loading";
 export default function AppLayout() {
+  // Defining loading state [idle → submitting → loading → idle]
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return (
+      <>
+        <Loading />
+      </>
+    );
+  }
   return (
     <>
       <Header />

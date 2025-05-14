@@ -35,9 +35,4 @@ export default function ErrorPage() {
       </section>
     );
   }
-  return (
-    <>
-      <div>Error Page</div>
-    </>
-  );
 }
