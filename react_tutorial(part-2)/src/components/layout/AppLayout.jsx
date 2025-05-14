@@ -9,7 +9,7 @@ export default function AppLayout() {
     <>
       <Header />
 
-      <div className="flex items-center justify-center h-[65vh]">
+      <div className="mx-[5rem] my-[5rem] text-center">
         <Outlet />
       </div>
 
