@@ -12,6 +12,9 @@ export default function Header() {
               <NavLink to={"/"}>Home</NavLink>
             </li>
             <li>
+              <NavLink to={"/movies"}>Movies</NavLink>
+            </li>
+            <li>
               <NavLink to={"/about"}>About</NavLink>
             </li>
             <li>

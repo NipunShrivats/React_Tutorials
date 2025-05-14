@@ -10,7 +10,7 @@ export default function ErrorPage() {
     navigate(-1);
   };
 
-  const error = useRouteError();
+  const error = useRouteError(); // help to get details about the error occured.
   console.log(error);
   if (error.status === 404) {
     return (
