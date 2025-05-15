@@ -5,7 +5,9 @@ import ErrorPage from "../pages/ErrorPage";
 export const getMoviesData = async () => {
   try {
     const response = await fetch(
-      "https://www.omdbapi.com/?i=tt3896198&apikey=3f5e058&s=titan&page=1"
+      `https://www.omdbapi.com/?i=tt3896198&apikey=${
+        import.meta.env.VITE_API_KEY
+      }&s=titan&page=1`
     );
     const data = await response.json();
     return data;

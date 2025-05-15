@@ -12,5 +12,4 @@
 <!-- 9. "loaders" and "useLoaderData" Hook for fetching API-->
 <!-- 10. Global Loading states using "useNavigation" - [this is a different hook]
 https://reactrouter.com/6.30.0/hooks/use-navigation#navigationstate -->
-
-<!-- 11. Secure API: ENV Variables-->
+<!-- 11. Secure API: .env Variables-->
