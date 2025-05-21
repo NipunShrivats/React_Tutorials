@@ -35,14 +35,14 @@ export default function App() {
         {
           path: "/movies",
           element: <Movies />,
-          loader: getMoviesData,
+          loader: getMoviesData, //this gets data from api
         },
 
         // DYNAMIC ROUTING
         {
           path: "/movies/:movieID",
           element: <MoviesDetails />,
-          loader: getMoviesDetails,
+          loader: getMoviesDetails, //this gets data from api
         },
         {
           path: "/services/",
