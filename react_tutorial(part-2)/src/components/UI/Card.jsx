@@ -17,8 +17,8 @@ export default function Card({ currMovie }) {
           </p>
         </div>
         <button className="mt-[0.5rem] mb-[2rem] border-transparent px-4 py-2 rounded-full bg-amber-600 text-white hover:bg-amber-500 transition delay-100 duration-100 ease-in-out cursor-pointer">
-          <NavLink to={Poster} target="_blank">
-            Check out Poster
+          <NavLink to={`/movies/${imdbID}`} target="_blank">
+            View Details
           </NavLink>
         </button>
       </div>

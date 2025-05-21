@@ -12,7 +12,12 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import AppLayout from "./components/layout/AppLayout";
 import ErrorPage from "./pages/ErrorPage";
+
 import { getMoviesData } from "./api/GetApiData"; // imported as a function
+import { getMoviesDetails } from "./api/GetMoviesDetails"; // imported as a function
+
+// Dynamic Routing UI page
+import MoviesDetails from "./components/UI/MoviesDetails";
 // ---------------------------------------
 
 // 1. Normal routes - V6.3
@@ -23,10 +28,30 @@ export default function App() {
       element: <AppLayout />,
       errorElement: <ErrorPage />,
       children: [
-        { path: "/", element: <Home /> },
-        { path: "/movies", element: <Movies />, loader: getMoviesData },
-        { path: "/services", element: <Services /> },
-        { path: "/about", element: <About /> },
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/movies",
+          element: <Movies />,
+          loader: getMoviesData,
+        },
+
+        // DYNAMIC ROUTING
+        {
+          path: "/movies/:movieID",
+          element: <MoviesDetails />,
+          loader: getMoviesDetails,
+        },
+        {
+          path: "/services/",
+          element: <Services />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
         { path: "/contact", element: <Contact /> },
       ],
     },

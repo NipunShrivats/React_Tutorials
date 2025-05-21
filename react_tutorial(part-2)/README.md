@@ -13,3 +13,4 @@
 <!-- 10. Global Loading states using "useNavigation" - [this is a different hook]
 https://reactrouter.com/6.30.0/hooks/use-navigation#navigationstate -->
 <!-- 11. Secure API: .env Variables-->
+<!-- 12. Nested Dynamic Routing -->
