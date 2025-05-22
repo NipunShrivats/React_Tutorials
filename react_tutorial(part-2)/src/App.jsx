@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import Movies from "./pages/Movies";
 import Services from "./pages/Services";
 import About from "./pages/About";
-import Contact from "./pages/Contact";
+import Contact, { contactData } from "./pages/Contact";
 import AppLayout from "./components/layout/AppLayout";
 import ErrorPage from "./pages/ErrorPage";
 
@@ -52,7 +52,11 @@ export default function App() {
           path: "/about",
           element: <About />,
         },
-        { path: "/contact", element: <Contact /> },
+        {
+          path: "/contact",
+          action: contactData,
+          element: <Contact />,
+        },
       ],
     },
   ]);
