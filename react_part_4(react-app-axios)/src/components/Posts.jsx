@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getPost } from "../api/PostApi";
+import { delPost, getPost } from "../api/PostApi";
 
 export default function Posts() {
   const [apiData, setApiData] = useState([]);
@@ -14,6 +14,12 @@ export default function Posts() {
   useEffect(() => {
     getApiData();
   }, []);
+
+  // Delete Function
+  const handleDeletePost = async (id) => {
+    const res = await delPost(id);
+    console.log(res);
+  };
 
   return (
     <>
@@ -37,7 +43,10 @@ export default function Posts() {
                   <button className="px-[2rem] py-[.3rem] rounded-[.2rem] bg-green-400 hover:bg-green-300 transition-all duration-300 cursor-pointer">
                     Edit
                   </button>
-                  <button className=" px-[2rem] py-[.3rem] rounded-[.2rem] bg-red-400 hover:bg-red-300 transition-all duration-300 cursor-pointer">
+                  <button
+                    onClick={() => handleDeletePost()}
+                    className=" px-[2rem] py-[.3rem] rounded-[.2rem] bg-red-400 hover:bg-red-300 transition-all duration-300 cursor-pointer"
+                  >
                     Delete
                   </button>
                 </div>
