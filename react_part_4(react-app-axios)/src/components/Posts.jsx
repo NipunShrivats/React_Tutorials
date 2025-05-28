@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { delPost, getPost } from "../api/PostApi";
+import SearchForm from "./SearchForm";
 
 export default function Posts() {
   const [apiData, setApiData] = useState([]);
+  // const [updateApiData, setUpdateApiData] = useState({});
+
   // using useEffect
   const getApiData = async () => {
     const res = await getPost();
@@ -17,13 +20,31 @@ export default function Posts() {
 
   // Delete Function
   const handleDeletePost = async (id) => {
-    const res = await delPost(id);
-    console.log(res);
+    try {
+      const res = await delPost(id);
+      console.log(res);
+      if (res.status === 200) {
+        const updatedPosts = apiData.filter((curPost) => {
+          return curPost.id !== id;
+        });
+        setApiData(updatedPosts);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
+
+  // Update Function
+  const handleUpdatePost = () => {};
 
   return (
     <>
       <section className="bg-black p-[2rem] border-4 border-white">
+        {/* form */}
+        <div>
+          <SearchForm apiData={apiData} setApiData={setApiData} />
+        </div>
+        {/* map */}
         <ul className="flex flex-row flex-wrap gap-[1rem]">
           {apiData.map((curEle) => {
             const { id, title, body } = curEle;
@@ -40,11 +61,14 @@ export default function Posts() {
                   <span className="font-bold">News:</span> {body}
                 </p>
                 <div className="flex gap-[1rem]">
-                  <button className="px-[2rem] py-[.3rem] rounded-[.2rem] bg-green-400 hover:bg-green-300 transition-all duration-300 cursor-pointer">
+                  <button
+                    onClick={() => handleUpdatePost(curEle)}
+                    className="px-[2rem] py-[.3rem] rounded-[.2rem] bg-green-400 hover:bg-green-300 transition-all duration-300 cursor-pointer"
+                  >
                     Edit
                   </button>
                   <button
-                    onClick={() => handleDeletePost()}
+                    onClick={() => handleDeletePost(id)}
                     className=" px-[2rem] py-[.3rem] rounded-[.2rem] bg-red-400 hover:bg-red-300 transition-all duration-300 cursor-pointer"
                   >
                     Delete

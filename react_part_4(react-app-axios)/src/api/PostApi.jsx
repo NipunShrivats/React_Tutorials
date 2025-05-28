@@ -13,3 +13,8 @@ export const getPost = () => {
 export const delPost = (id) => {
   return api.delete(`/posts/${id}`);
 };
+
+// Post Method
+export const postPost = (post) => {
+  return api.post(`/posts`, post);
+};
