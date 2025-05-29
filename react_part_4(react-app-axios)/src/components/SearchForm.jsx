@@ -1,12 +1,26 @@
-import React, { useState } from "react";
-import { Form } from "react-router-dom";
-import { postPost } from "../api/PostApi";
+import React, { useEffect, useState } from "react";
+import { postPost, updatePost } from "../api/PostApi";
 
-export default function SearchForm({ apiData, setApiData }) {
+export default function SearchForm({
+  apiData,
+  setApiData,
+  updateApiData,
+  setUpdateApiData,
+}) {
   const [addData, setAddData] = useState({
     title: "",
     body: "",
   });
+
+  let isEmpty = Object.keys(updateApiData).length === 0;
+
+  useEffect(() => {
+    updateApiData &&
+      setAddData({
+        title: updateApiData.title || "",
+        body: updateApiData.body || "",
+      });
+  }, [updateApiData]);
 
   const handleInputChange = (event) => {
     const name = event.target.name; // title, body
@@ -18,9 +32,16 @@ export default function SearchForm({ apiData, setApiData }) {
 
   const handFormSubmit = (e) => {
     e.preventDefault();
-    addPostData();
+    const action = e.nativeEvent.submitter.value;
+    console.log("action:", action);
+    if (action === "Add Post") {
+      addPostData();
+    } else if (action === "Edit Post") {
+      updatePostData();
+    }
   };
 
+  // add data
   const addPostData = async () => {
     const res = await postPost(addData);
     console.log("res", res);
@@ -30,6 +51,26 @@ export default function SearchForm({ apiData, setApiData }) {
       setAddData({ title: "", body: "" }); // will get empty after value is entered
     }
   };
+
+  // Update data
+  const updatePostData = async () => {
+    try {
+      const res = await updatePost(updateApiData.id, addData);
+      // console.log(res);
+      if (res.status === 200) {
+        setApiData((prev) => {
+          return prev.map((curElem) => {
+            return curElem.id === updateApiData.id ? res.data : curElem;
+          });
+        });
+        setAddData({ title: "", body: "" });
+        setUpdateApiData({});
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <form
@@ -75,20 +116,24 @@ export default function SearchForm({ apiData, setApiData }) {
           />
         </div>
         <button
+          value={isEmpty ? "Add Post" : "Edit Post"}
           type="submit"
-          className="border-0 
-          outline-0 
-          border-amber-50 
-          text-white 
-          w-[15rem] 
-          h-[2.5rem] 
-          bg-blue-900
-          rounded-[.2rem]
-          cursor-pointer
-          hover:bg-blue-800
-        "
+          className={`
+            border-0
+            outline-0
+            border-amber-50
+            text-white
+            w-[15rem]
+            h-[2.5rem]
+            rounded-[.2rem]
+            cursor-pointer
+            ${
+              isEmpty
+                ? "bg-blue-900 hover:bg-blue-800"
+                : "bg-green-600 hover:bg-green-500"
+            }`}
         >
-          Add Post
+          {isEmpty ? "Add Post" : "Edit Post"}
         </button>
       </form>
     </>

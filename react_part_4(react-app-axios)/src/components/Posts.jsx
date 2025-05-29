@@ -4,7 +4,7 @@ import SearchForm from "./SearchForm";
 
 export default function Posts() {
   const [apiData, setApiData] = useState([]);
-  // const [updateApiData, setUpdateApiData] = useState({});
+  const [updateApiData, setUpdateApiData] = useState({});
 
   // using useEffect
   const getApiData = async () => {
@@ -35,14 +35,20 @@ export default function Posts() {
   };
 
   // Update Function
-  const handleUpdatePost = () => {};
-
+  const handleUpdatePost = (curEle) => {
+    setUpdateApiData(curEle);
+  };
   return (
     <>
       <section className="bg-black p-[2rem] border-4 border-white">
         {/* form */}
         <div>
-          <SearchForm apiData={apiData} setApiData={setApiData} />
+          <SearchForm
+            apiData={apiData}
+            setApiData={setApiData}
+            updateApiData={updateApiData}
+            setUpdateApiData={setUpdateApiData}
+          />
         </div>
         {/* map */}
         <ul className="flex flex-row flex-wrap gap-[1rem]">
