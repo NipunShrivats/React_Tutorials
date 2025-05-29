@@ -1,12 +1,16 @@
-# React + Vite
+<!-- Axios -->
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. "Axios" is a "promise based HTTP Library" that helps you easily communicate with servers or API's over the internet.
 
-Currently, two official plugins are available:
+2. Axios uses promises to handle HTTP requests and responses
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+3. It allows your website or app to send and receive data from a server, like fetching inforemation, sumitting forms, or updating content without reloading the entire page.
 
-## Expanding the ESLint configuration
+4. Basically alternative of Fetch API
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<!-- Why "Axios" over "Fetch?" -->
+
+1. Easier syntax and cleaner code.
+2. Automatic JSON transformation without extra code.
+3. Better built-in error handling
+4. support for older browser
