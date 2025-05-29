@@ -1,1 +1,1 @@
-All notes are in individual folders
+## All notes are in individual folders
