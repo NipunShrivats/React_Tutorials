@@ -9,6 +9,8 @@
 1. POST - To Create
 2. GET - To Read
 3. PUT/PATCH - To Edit
+
    a. PUT -
    b. PACTH -
+
 4. DELETE - To Delete
