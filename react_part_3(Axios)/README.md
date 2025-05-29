@@ -1,4 +1,4 @@
-<!-- Axios -->
+## Axios
 
 1. "Axios" is a "promise based HTTP Library" that helps you easily communicate with servers or API's over the internet.
 
@@ -8,7 +8,7 @@
 
 4. Basically alternative of Fetch API
 
-<!-- Why "Axios" over "Fetch?" -->
+### Why "Axios" over "Fetch?"
 
 1. Easier syntax and cleaner code.
 2. Automatic JSON transformation without extra code.

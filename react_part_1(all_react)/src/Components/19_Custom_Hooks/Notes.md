@@ -1,8 +1,8 @@
-<!-- Custom Hooks -->
+## Custom Hooks
 
---> Ceating custom hooks in react is a powerful way to encapsulate logic and make your components cleaner and more maintainable
+Ceating custom hooks in react is a powerful way to encapsulate logic and make your components cleaner and more maintainable
 
-<!-- Rules for custom Hooks -->
+### Rules for custom Hooks
 
 Custom hooks:
 
@@ -14,5 +14,6 @@ Custom hooks:
 
 4. Keep Hooks Pure: Hooks Should be free from side effects and return values or function that the component can use.
 
-// Note: Pure Components?
-// components that only re-render when their props or state change, not when their parent components re-render
+#### Note: Pure Components?
+
+components that only re-render when their props or state change, not when their parent components re-render

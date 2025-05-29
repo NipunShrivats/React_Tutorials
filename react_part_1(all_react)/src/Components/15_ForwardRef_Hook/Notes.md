@@ -1,4 +1,4 @@
-<!-- forwardRef -->
+## forwardRef
 
 // it is no longer necessary in react 19. will be depricated in future..
 
@@ -6,7 +6,7 @@
 It gives a child component a reference to DOM entity created by its parent in react
 //--> This helps the children to read and modify the elements from any location where it is used
 
-<!-- Syntax -->
+### Syntax
 
 React.forwardRef(
 (props, ref)=>

@@ -1,4 +1,4 @@
-<!-- Prop Drilling -->
+## Prop Drilling
 
 1. It is a pattern where you pass data from a parent component to deeply nested child components through multiple layers of components, even if some intermediate components dont even need the data.
 

@@ -1,5 +1,6 @@
-<!-- useCallback Hook -->
-<!-- Note -->
+## useCallback Hook
+
+### Note
 
 useMemo - for optimizing values
 useCallback - for optimizing functions

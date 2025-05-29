@@ -1,4 +1,4 @@
-<!-- ShotCircuit Evaluation -->
+## ShotCircuit Evaluation
 
 1. It is technique used in js(and other prog. lang..) where expressions are evaluated from "left to right."
 
@@ -6,9 +6,9 @@
 
 3. Often used in react to "conditionally render components" or execute code based on truthiness of certain conditions.
 
-<!-- Example -->
+### Example
 
-1. Logical OR (||)
+#### 1. Logical OR (||)
 
 syntax: exp1 || exp2
 rule: if exp1 == true return exp1, otherwise return exp2.
@@ -17,9 +17,7 @@ ex:
 res = false || "Hello" // => Hello
 res = true || "Hello" // => true
 
-<!-- ------------------------ -->
-
-2. Logical AND (&&)
+#### 2. Logical AND (&&)
 
 syntax: exp1 && exp2
 rule: if exp1 == false return exp1, otherwise return exp2.
@@ -28,11 +26,10 @@ ex:
 res = true && "Hello" // => Hello
 res = false && "Hello" // => false
 
-<!-- ------------------------ -->
+#### 3. Nullish Coalescing (??)
 
-3. Nullish Coalescing (??)
+##### --> syntax: exp1 ?? exp2
 
-syntax: exp1 ?? exp2
 rule: if exp1 is not null or undefined, return exp1, otherwise return exp2.
 
 ex:
