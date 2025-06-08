@@ -95,3 +95,40 @@ button {
         padding: 1.2rem 0;
     }
 }
+
+.footer-section {
+    /* border: 2px solid red; */
+    background-color: rgb(212, 243, 255);
+    padding: 2rem 0rem;
+}
+
+.box-inner {
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-contract {
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    padding: 2rem;
+    background-color: rgb(226, 241, 247);
+    border-radius: 1rem;
+    width: 25rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.icon {
+    /* border: 2px solid red; */
+    font-size: 2.5rem;
+}
+
+.footer-contract-text :last-child {
+    font-size: 2rem;
+    font-weight: 600;
+}
