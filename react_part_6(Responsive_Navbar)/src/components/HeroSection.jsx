@@ -22,7 +22,7 @@ export default function HeroSection() {
             <div className="banner-img">
               <img
                 className="banner-image"
-                src="https://www.goanywhere.com/sites/default/files/2023-01/secure-file-transfer_0.png"
+                src="https://cdn-icons-png.flaticon.com/512/6302/6302076.png"
                 alt="Illustration"
               />
             </div>

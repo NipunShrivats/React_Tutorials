@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
+import { PiHamburgerBold } from "react-icons/pi";
 
 export default function Navbar() {
+  const [showMenu, setShowMenu] = useState(false);
+  const handleBtnToggle = () => {
+    setShowMenu(!showMenu);
+  };
   return (
     <>
       <header>
         <div className="container">
           <div className="grid navbar-grid">
             <div className="logo">
-              <h1>THAPA TECHNICAL</h1>
+              <h1>NIPUN RAWAT</h1>
             </div>
 
-            <nav>
+            <nav className={showMenu ? "menu-mobile" : "menu-web"}>
               <ul>
                 <li>
                   <a href="#">HOME</a>
@@ -27,6 +32,11 @@ export default function Navbar() {
                 </li>
               </ul>
             </nav>
+            <div className="ham-menu">
+              <button onClick={handleBtnToggle}>
+                <PiHamburgerBold />
+              </button>
+            </div>
           </div>
         </div>
       </header>
