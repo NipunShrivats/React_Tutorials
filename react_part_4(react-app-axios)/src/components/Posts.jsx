@@ -40,7 +40,7 @@ export default function Posts() {
   };
   return (
     <>
-      <section className="bg-black p-[2rem] border-4 border-white">
+      <section className="bg-blue-400 p-[2rem] border-4 border-white">
         {/* form */}
         <div>
           <SearchForm
