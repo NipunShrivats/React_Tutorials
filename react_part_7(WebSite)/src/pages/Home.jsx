@@ -1,9 +1,12 @@
 import React from "react";
 
+import HeroSection from "../components/UI/HeroSection";
+import About from "./About";
 export default function Home() {
   return (
-    <main>
-      <div className="container grid grid-two-cols">hello</div>
-    </main>
+    <>
+      <HeroSection />
+      <About />
+    </>
   );
 }
