@@ -220,7 +220,7 @@ nav ul {
 /* About Section  */
 
 .section-about {
-    margin: 0 auto 9rem auto;
+    margin: 5rem auto 9rem auto;
 }
 
 .gradient-cards {
@@ -366,6 +366,10 @@ ul {
 .footer-section {
     background: #151414;
     position: relative;
+    /* border: 2px solid red; */
+    position: relative;
+    margin-top: 50rem;
+
 }
 
 .copyright-area {
