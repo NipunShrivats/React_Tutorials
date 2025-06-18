@@ -14,10 +14,11 @@ export default function CountryDetails() {
   useEffect(() => {
     startTransition(async () => {
       const res = await getCurrentCountryData(params.id);
-      console.log(res.data);
-      setCountyData(res.data);
+      console.log(res.data[0].name.official);
+      setCountyData(res.data[0]);
     });
   }, []);
+  // console.log("countryData:", countryData);
 
   if (isPending) {
     return <Loader />;
