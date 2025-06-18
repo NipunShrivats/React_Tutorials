@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Contacts from "./pages/Contacts";
 import Country from "./pages/Country";
 import ErrorPage from "./pages/ErrorPage";
+import CountryDetails from "./components/Layout/CountryDetails";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
       {
         path: "country",
         element: <Country />,
+      },
+      // dynamic route // for sub-flag content //
+      {
+        path: "country/:id",
+        element: <CountryDetails />,
       },
     ],
   },

@@ -10,3 +10,11 @@ const api = axios.create({
 export const getCountryData = () => {
   return api.get("/all?fields=name,population,region,capital,flags");
 };
+
+// HTTP GET method for individual country name
+
+export const getCurrentCountryData = (name) => {
+  return api.get(
+    `/name/${name}?fullText=true&fields=name,population,region,capital,flags`
+  );
+};

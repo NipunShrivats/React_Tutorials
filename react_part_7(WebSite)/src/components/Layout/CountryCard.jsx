@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function CountryCard({ country }) {
   const { flags, name, population, region, capital } = country;
@@ -25,6 +26,11 @@ export default function CountryCard({ country }) {
               <span className="card-description">Population: </span>
               {population}
             </p>
+
+            {/* here it will get its :id */}
+            <NavLink to={`/country/${name.common}`}>
+              <button className="">Read More</button>
+            </NavLink>
           </div>
         </div>
       </li>
