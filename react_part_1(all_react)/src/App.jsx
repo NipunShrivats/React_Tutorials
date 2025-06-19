@@ -78,6 +78,7 @@ import UseMemo_Hook from "./Components/23_Memo/UseMemo_Hook/UseMemo_Hook";
 import Together from "./Components/23_Memo/UsingTogether/ReactMemo";
 // -----------------------------------------------------
 import UseCallback_Hook from "./Components/24_UseCallBack_Hook/UseCallback";
+import UseLayoutEffectHook from "./Components/12_UseEffect_Hook/UseLayoutEffectHook";
 // -----------------------------------------------------
 
 export default function App() {
@@ -140,6 +141,7 @@ export default function App() {
       {/* <UseEffectHook /> */}
       {/* <UseEffect_Challenge /> */}
       {/* <Cleanup /> */}
+      <UseLayoutEffectHook />
 
       {/* ---------- 13. Fetching API ----------*/}
       {/* <HowNotToFetchAPI /> */}
