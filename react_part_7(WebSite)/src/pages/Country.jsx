@@ -7,6 +7,9 @@ export default function Country() {
   const [isPending, startTransition] = useTransition(); //
   const [countries, setCountries] = useState([]);
 
+  const [search, setSearch] = useState();
+  const [filter, setFilter] = useState();
+
   useEffect(() => {
     startTransition(async () => {
       const res = await getCountryData();
