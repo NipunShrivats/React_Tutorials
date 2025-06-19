@@ -9,6 +9,7 @@ import Contacts from "./pages/Contacts";
 import Country from "./pages/Country";
 import ErrorPage from "./pages/ErrorPage";
 import CountryDetails from "./components/Layout/CountryDetails";
+import { countryLoader } from "./api/postApi";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,7 @@ const router = createBrowserRouter([
       {
         path: "country/:id",
         element: <CountryDetails />,
+        loader: countryLoader,
       },
     ],
   },

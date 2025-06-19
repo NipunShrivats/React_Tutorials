@@ -13,8 +13,9 @@ export const getCountryData = () => {
 
 // HTTP GET method for individual country name
 
-export const getCurrentCountryData = (name) => {
-  return api.get(
-    `/name/${name}?fullText=true&fields=name,population,region,capital,flags`
+export const countryLoader = async ({ params }) => {
+  const data = await api.get(
+    `/name/${params.id}?fullText=true&fields=name,population,region,capital,flags`
   );
+  return data.data[0];
 };

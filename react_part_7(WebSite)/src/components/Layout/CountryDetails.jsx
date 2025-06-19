@@ -1,28 +1,9 @@
-import React, { useEffect, useState, useTransition } from "react";
-import { useParams } from "react-router-dom";
-import { getCurrentCountryData } from "../../api/postApi";
-import Loader from "../UI/Loader";
+import React from "react";
+import { useLoaderData } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function CountryDetails() {
-  const [isPending, startTransition] = useTransition();
-  const [countryData, setCountyData] = useState();
-
-  // This hook will get the params
-  const params = useParams();
-  // console.log(params);
-
-  useEffect(() => {
-    startTransition(async () => {
-      const res = await getCurrentCountryData(params.id);
-      console.log(res.data[0].name.official);
-      setCountyData(res.data[0]);
-    });
-  }, []);
-  // console.log("countryData:", countryData);
-
-  if (isPending) {
-    return <Loader />;
-  }
+  const countryData = useLoaderData();
 
   return (
     <>
@@ -30,19 +11,30 @@ export default function CountryDetails() {
         <div className="container-card bg-white-box">
           <div className="country-image grid grid-two-cols">
             <img
-              // src={countryData.flags.svg}
-              // alt={countryData.flags.alt}
+              src={countryData.flags.svg}
+              alt={countryData.flags.alt}
               className="flag"
             />
             <div className="country-content">
-              {/* <p className="card-title">{countryData[0].capital}</p> */}
+              <p className="card-title">{countryData.name.official}</p>
               <div className="infoContainer">
                 <p>
-                  <span className="card-description">Native Names:</span>
-                  {}
+                  <span className="card-description">Native Names: </span>
+                  {Object.keys(countryData.name.nativeName)
+                    .map((key) => countryData.name.nativeName[key].common)
+                    .join(", ")}
+                </p>
+                <p>
+                  <span className="card-description">Population: </span>
+                  {countryData.population.toLocaleString()}
                 </p>
               </div>
             </div>
+          </div>
+          <div className="country-card-backBtn">
+            <NavLink to="/country" className="backBtn">
+              <button>Go Back</button>
+            </NavLink>
           </div>
         </div>
       </section>
