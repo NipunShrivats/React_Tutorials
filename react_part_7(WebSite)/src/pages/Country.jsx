@@ -5,6 +5,7 @@ import CountryCard from "../components/Layout/CountryCard";
 import SearchFilter from "../components/UI/SearchFilter";
 
 export default function Country() {
+  const [countryCounter, setCountryCounter] = useState(0);
   const [isPending, startTransition] = useTransition(); //
   const [countries, setCountries] = useState([]);
 
@@ -33,14 +34,20 @@ export default function Country() {
 
   const filterRegion = (country) => {
     if (filter === "All") {
+      // console.log(country);
       return country;
     } else {
+      // console.log(country);
       return country.region === filter;
     }
   };
   const filterCountry = countries.filter(
     (country) => searchCountry(country) && filterRegion(country)
   );
+  // country counter//
+  console.log(filterCountry);
+  console.log(typeof filterCountry.length);
+  // setCountryCounter(filterCountry.length);
 
   return (
     <>
@@ -58,6 +65,7 @@ export default function Country() {
             return <CountryCard country={CurCountry} key={index} />;
           })}
         </ul>
+        <h2>{countryCounter}</h2>
       </section>
     </>
   );

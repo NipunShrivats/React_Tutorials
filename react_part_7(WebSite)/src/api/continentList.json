@@ -11,14 +11,10 @@
   },
   {
     "id": 3,
-    "name": "North America",
-    "countries": 23
+    "name": "Americas",
+    "countries": 0
   },
-  {
-    "id": 4,
-    "name": "South America",
-    "countries": 12
-  },
+
   {
     "id": 5,
     "name": "Africa",
@@ -31,7 +27,7 @@
   },
   {
     "id": 7,
-    "name": "Antarctica",
-    "countries": 0
+    "name": "Antarctic",
+    "countries": 5
   }
 ]
