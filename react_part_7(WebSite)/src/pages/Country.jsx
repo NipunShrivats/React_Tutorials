@@ -5,7 +5,7 @@ import CountryCard from "../components/Layout/CountryCard";
 import SearchFilter from "../components/UI/SearchFilter";
 
 export default function Country() {
-  const [countryCounter, setCountryCounter] = useState(0);
+  // const [countryCounter, setCountryCounter] = useState(0);
   const [isPending, startTransition] = useTransition(); //
   const [countries, setCountries] = useState([]);
 
