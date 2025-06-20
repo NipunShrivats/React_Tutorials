@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useTransition } from "react";
+import React, { useEffect, useMemo, useState, useTransition } from "react";
 import { getCountryData } from "../api/postApi";
 import Loader from "../components/UI/Loader";
 import CountryCard from "../components/Layout/CountryCard";
@@ -18,6 +18,12 @@ export default function Country() {
       setCountries(res.data);
     });
   }, []);
+
+  // const totalCountries = useMemo(
+  //   () => setCountryCounter(filterCountry.length),
+  //   [filterCountry.length]
+  // );
+  // setCountryCounter(filterCountry.length);
 
   if (isPending) {
     return <Loader />;
@@ -44,10 +50,6 @@ export default function Country() {
   const filterCountry = countries.filter(
     (country) => searchCountry(country) && filterRegion(country)
   );
-  // country counter//
-  console.log(filterCountry);
-  console.log(typeof filterCountry.length);
-  // setCountryCounter(filterCountry.length);
 
   return (
     <>
@@ -65,7 +67,7 @@ export default function Country() {
             return <CountryCard country={CurCountry} key={index} />;
           })}
         </ul>
-        <h2>{countryCounter}</h2>
+        {/* <h2>{totalCountries}</h2> */}
       </section>
     </>
   );
