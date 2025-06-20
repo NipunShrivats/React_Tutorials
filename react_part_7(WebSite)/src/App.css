@@ -468,6 +468,8 @@ ul {
     justify-content: space-between;
     margin-bottom: 3.2rem;
 
+
+
     & .container-card {
         padding: 0.8rem 2.4rem;
         background: linear-gradient(71deg, #080509, #1a171c, #080509);
@@ -482,6 +484,8 @@ ul {
         color: rgba(255, 255, 255, 0.8);
         border: 0.05rem solid #fff;
         background: linear-gradient(71deg, #080509, #1a171c, #080509);
+        padding: 1rem;
+        width: 25rem;
     }
 
     & .select-section {
@@ -620,4 +624,11 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.ascDes_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
 }
