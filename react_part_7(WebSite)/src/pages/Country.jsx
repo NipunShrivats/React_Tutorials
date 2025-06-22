@@ -45,10 +45,6 @@ export default function Country() {
   // --------------
   return (
     <>
-      <p>
-        {filteredCountries.length}{" "}
-        {filteredCountries.length === 1 ? "country" : "countries"} found
-      </p>
       <section className="country-section">
         <SearchFilter
           search={search}
@@ -58,6 +54,7 @@ export default function Country() {
           countries={countries}
           setCountries={setCountries}
           countryCounter={countryCounter} //faltu HAI
+          totalCountries={filteredCountries.length}
         />
         <ul className="grid grid-four-cols">
           {filteredCountries.map((CurCountry, index) => {

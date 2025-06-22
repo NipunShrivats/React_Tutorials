@@ -6,8 +6,8 @@ export default function SearchFilter({
   setSearch,
   filter,
   setFilter,
-  // countries,
   setCountries,
+  totalCountries,
 }) {
   const handleInputChange = (event) => {
     event.preventDefault();
@@ -52,14 +52,18 @@ export default function SearchFilter({
         >
           <option value="All">All</option>
           {continentList.map((curData) => {
-            const { id, name, countries } = curData;
+            const { id, name } = curData;
             return (
               <option value={name} key={id}>
-                {name} ({countries} countries)
+                {name}
               </option>
             );
           })}
         </select>
+        <p>
+          {totalCountries} {totalCountries === 1 ? "country" : "countries"}{" "}
+          found
+        </p>
       </div>
     </section>
   );
