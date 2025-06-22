@@ -19,3 +19,7 @@ export const countryLoader = async ({ params }) => {
   );
   return data.data[0];
 };
+
+export const wait = (ms) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};

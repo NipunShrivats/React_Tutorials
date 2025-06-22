@@ -5,8 +5,8 @@ import CountryCard from "../components/Layout/CountryCard";
 import SearchFilter from "../components/UI/SearchFilter";
 
 export default function Country() {
-  // const [countryCounter, setCountryCounter] = useState(0);
-  const [isPending, startTransition] = useTransition(); //
+  const [countryCounter, setCountryCounter] = useState(0);
+  const [isPending, startTransition] = useTransition();
   const [countries, setCountries] = useState([]);
 
   const [search, setSearch] = useState("");
@@ -15,44 +15,36 @@ export default function Country() {
   useEffect(() => {
     startTransition(async () => {
       const res = await getCountryData();
+      setCountryCounter(res.data.length);
       setCountries(res.data);
     });
   }, []);
 
-  // const totalCountries = useMemo(
-  //   () => setCountryCounter(filterCountry.length),
-  //   [filterCountry.length]
-  // );
-  // setCountryCounter(filterCountry.length);
+  // --------------
+  const filteredCountries = useMemo(() => {
+    return countries.filter((country) => {
+      // Search filter
+      const matchesSearch = search
+        ? country.name.common.toLowerCase().includes(search.toLowerCase())
+        : true;
+
+      // Region filter
+      const matchesRegion = filter === "All" || country.region === filter;
+
+      return matchesSearch && matchesRegion;
+    });
+  }, [countries, search, filter]);
 
   if (isPending) {
     return <Loader />;
   }
-  // console.log("search:", search);
-  // console.log("filter:", filter);
-
-  const searchCountry = (country) => {
-    if (search) {
-      return country.name.common.toLowerCase().includes(search.toLowerCase());
-    }
-    return country;
-  };
-
-  const filterRegion = (country) => {
-    if (filter === "All") {
-      // console.log(country);
-      return country;
-    } else {
-      // console.log(country);
-      return country.region === filter;
-    }
-  };
-  const filterCountry = countries.filter(
-    (country) => searchCountry(country) && filterRegion(country)
-  );
-
+  // --------------
   return (
     <>
+      <p>
+        {filteredCountries.length}{" "}
+        {filteredCountries.length === 1 ? "country" : "countries"} found
+      </p>
       <section className="country-section">
         <SearchFilter
           search={search}
@@ -61,13 +53,13 @@ export default function Country() {
           setFilter={setFilter}
           countries={countries}
           setCountries={setCountries}
+          countryCounter={countryCounter} //faltu
         />
         <ul className="grid grid-four-cols">
-          {filterCountry.map((CurCountry, index) => {
+          {filteredCountries.map((CurCountry, index) => {
             return <CountryCard country={CurCountry} key={index} />;
           })}
         </ul>
-        {/* <h2>{totalCountries}</h2> */}
       </section>
     </>
   );

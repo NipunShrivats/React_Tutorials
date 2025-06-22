@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import continentList from "../../api/continentList.json";
 
 export default function SearchFilter({
@@ -6,7 +6,7 @@ export default function SearchFilter({
   setSearch,
   filter,
   setFilter,
-  countries,
+  // countries,
   setCountries,
 }) {
   const handleInputChange = (event) => {
@@ -18,15 +18,19 @@ export default function SearchFilter({
     setFilter(event.target.value);
   };
 
-  const sortCountries = (value) => {
-    const sortCountry = [...countries].sort((a, b) => {
-      return value === "asc"
-        ? a.name.common.localeCompare(b.name.common)
-        : b.name.common.localeCompare(a.name.common);
-    });
-    setCountries(sortCountry);
-  };
-
+  const sortCountries = useCallback(
+    (value) => {
+      setCountries((prevCountries) => {
+        const sortedCountries = [...prevCountries].sort((a, b) => {
+          return value === "asc"
+            ? a.name.common.localeCompare(b.name.common)
+            : b.name.common.localeCompare(a.name.common);
+        });
+        return sortedCountries;
+      });
+    },
+    [setCountries]
+  );
   return (
     <section className="section-searchFilter container">
       <input
