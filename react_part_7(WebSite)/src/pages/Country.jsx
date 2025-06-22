@@ -3,6 +3,7 @@ import { getCountryData } from "../api/postApi";
 import Loader from "../components/UI/Loader";
 import CountryCard from "../components/Layout/CountryCard";
 import SearchFilter from "../components/UI/SearchFilter";
+import { useNavigation } from "react-router-dom";
 
 export default function Country() {
   const [countryCounter, setCountryCounter] = useState(0);
@@ -11,6 +12,9 @@ export default function Country() {
 
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("All");
+
+  const navigate = useNavigation();
+  console.log(navigate.state);
 
   useEffect(() => {
     startTransition(async () => {
@@ -53,7 +57,7 @@ export default function Country() {
           setFilter={setFilter}
           countries={countries}
           setCountries={setCountries}
-          countryCounter={countryCounter} //faltu
+          countryCounter={countryCounter} //faltu HAI
         />
         <ul className="grid grid-four-cols">
           {filteredCountries.map((CurCountry, index) => {
