@@ -7,6 +7,7 @@ import MainLayout from "./components/layout/MainLayout";
 import Home from "./components/pages/Home";
 import FetchOld from "./components/pages/FetchOld";
 import FetchRQ from "./components/pages/FetchRQ";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 // create router
 const router = createBrowserRouter([
@@ -30,5 +31,11 @@ const router = createBrowserRouter([
   },
 ]);
 export default function App() {
-  return <RouterProvider router={router}></RouterProvider>;
+  const queryClinet = new QueryClient();
+
+  return (
+    <QueryClientProvider client={queryClinet}>
+      <RouterProvider router={router}></RouterProvider>
+    </QueryClientProvider>
+  );
 }
