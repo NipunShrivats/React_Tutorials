@@ -1,4 +1,4 @@
-# \* Tanstack Query / React Query
+# + Tanstack Query / React Query
 
 1. It is a library that helps us "to manage the state of data" you fetch from servers, like API's, in your React applications.
 
