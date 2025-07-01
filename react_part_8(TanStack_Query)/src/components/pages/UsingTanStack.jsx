@@ -16,6 +16,7 @@ export default function UsingTanStack() {
     queryKey: ["posts"], // works like useState
     queryFn: getPosts, // works like useEffect
     gcTime: 1000, // Garbage Collection time in ms
+    staleTime: 5000,
   });
 
   if (isPending) {

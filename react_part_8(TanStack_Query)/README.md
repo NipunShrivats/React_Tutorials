@@ -53,10 +53,22 @@
 3. This means if you ask for the same data again, instead of making another api request, react Query will give you the saved data.
 4. The cache updates automatically if the data changes, so you always get the latest information
 
-## use Case:
+### use Case:
 
 Imagine you are fetching a list of users. If u go back to the same page. react Query will show the saved list from the cache instead of reloading it from the server, making your app faster. if a new user is added, React Query will automatically update the list.
 
-## Note:-
+### Note:-
 
 By Default, inactive queries are garbage collected after 5 minutes. this means that the query is not being used for 5 minutes prior to which the cache for that query will be cleaned up.
+
+## staleTime
+
+It is a configuration option that determines how long fetched data is considered fresh before it needs to be fetched.
+
+### Working:-
+
+1. Fresh Data: When data is initially fetched or updated, it's considered fresh.
+
+2. Stale Data: After the staleTime duration(specified in milliseconds) elapses, the data is considered stale.
+
+3. Default Value: The default Staletime is 0ms, meaning data becomes stale immediately after being fetched, This ensures data is always up-to-date but can lead to frequent refetching
