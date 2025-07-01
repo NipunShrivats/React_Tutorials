@@ -3,6 +3,8 @@ import "./App.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
 import MainLayout from "./components/layout/MainLayout";
 import Home from "./components/pages/Home";
 import AxiosFetching from "./components/pages/UsingAxios";
@@ -29,12 +31,15 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
 export default function App() {
   const queryClinet = new QueryClient();
 
   return (
     <QueryClientProvider client={queryClinet}>
       <RouterProvider router={router}></RouterProvider>
+      {/* React Query devtools */}
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }

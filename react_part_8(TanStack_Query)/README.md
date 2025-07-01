@@ -4,7 +4,7 @@
 
 2. Now we already have "useState, useEffect and contextAPI" to manage the state but tanstack save labourios task.
 
-### Advantages
+## Advantages
 
 1. Data fetching made easy - With a simple useQuery hook, fetching data becomes super easy.
 
@@ -45,3 +45,18 @@
 
 1. This creates a new QueryClient instance with default settings.
 2. We can configure it with options if needed (eg. setting cache time, stale time, etc)
+
+# gcTime (Garbage Collection Time)
+
+1. The cacheTime is renamed as gcTime in v5 of React query
+2. When we use React Query to get data, it saves the result in a local cache.
+3. This means if you ask for the same data again, instead of making another api request, react Query will give you the saved data.
+4. The cache updates automatically if the data changes, so you always get the latest information
+
+## use Case:
+
+Imagine you are fetching a list of users. If u go back to the same page. react Query will show the saved list from the cache instead of reloading it from the server, making your app faster. if a new user is added, React Query will automatically update the list.
+
+## Note:-
+
+By Default, inactive queries are garbage collected after 5 minutes. this means that the query is not being used for 5 minutes prior to which the cache for that query will be cleaned up.

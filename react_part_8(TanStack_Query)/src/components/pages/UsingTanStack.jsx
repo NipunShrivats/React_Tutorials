@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { fetchPosts } from "../../API/api";
 import { useQuery } from "@tanstack/react-query";
 
@@ -12,17 +12,18 @@ export default function UsingTanStack() {
     }
   };
 
-  const { data, isLoading, isError, error } = useQuery({
+  const { data, isPending, isError, error } = useQuery({
     queryKey: ["posts"], // works like useState
     queryFn: getPosts, // works like useEffect
+    gcTime: 1000, // Garbage Collection time in ms
   });
 
-  if (isLoading) {
+  if (isPending) {
     return <div>Loading posts...</div>;
   }
 
   if (isError) {
-    return <div>Error: {error.message}</div>;
+    return <div>Error: {error.message || "Something is wrong!"}</div>;
   }
 
   return (
