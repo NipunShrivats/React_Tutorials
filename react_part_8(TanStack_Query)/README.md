@@ -1,10 +1,10 @@
-# - Tanstack Query / React Query
+# \* Tanstack Query / React Query
 
 1. It is a library that helps us "to manage the state of data" you fetch from servers, like API's, in your React applications.
 
 2. Now we already have "useState, useEffect and contextAPI" to manage the state but tanstack save labourios task.
 
-## Advantages
+### - Advantages
 
 1. Data fetching made easy - With a simple useQuery hook, fetching data becomes super easy.
 
@@ -17,7 +17,7 @@
 
 5. Pagination and infinite scrolling - has special tools designed for those complex use cases.
 
-## Veredict
+### - Veredict
 
 1. Makes workig with server side code easy.
 
@@ -25,7 +25,7 @@
 
 3. If any app relies on API data, tanstack wil work liek a charm.
 
-# QueryClient
+# \* QueryClient
 
 1. It is the core part of the react-query library.
 2. It manages the caching background fetching, data synchronization, and other quert-related logic.
@@ -36,36 +36,36 @@
    <RouterProvider router={router}></RouterProvider>
    </QueryClientProvider>
 
-## QueryClientProvider
+## - QueryClientProvider
 
 1. This component is a part of react-query and is used to provide the QueryClient instance to your entire React app or aportion of it.
 2. This makes the query client available via React's context API so that all the components in the tree can use the useQuery, useMutation, and other hooks provided by react query.
 
-## New QueryClient()
+## - New QueryClient()
 
 1. This creates a new QueryClient instance with default settings.
 2. We can configure it with options if needed (eg. setting cache time, stale time, etc)
 
-# gcTime (Garbage Collection Time)
+# \* gcTime (Garbage Collection Time)
 
 1. The cacheTime is renamed as gcTime in v5 of React query
 2. When we use React Query to get data, it saves the result in a local cache.
 3. This means if you ask for the same data again, instead of making another api request, react Query will give you the saved data.
 4. The cache updates automatically if the data changes, so you always get the latest information
 
-### use Case:
+### -- use Case:
 
 Imagine you are fetching a list of users. If u go back to the same page. react Query will show the saved list from the cache instead of reloading it from the server, making your app faster. if a new user is added, React Query will automatically update the list.
 
-### Note:-
+### -- Note:-
 
 By Default, inactive queries are garbage collected after 5 minutes. this means that the query is not being used for 5 minutes prior to which the cache for that query will be cleaned up.
 
-## staleTime
+## - staleTime
 
 It is a configuration option that determines how long fetched data is considered fresh before it needs to be fetched.
 
-### Working:-
+### -- Working:-
 
 1. Fresh Data: When data is initially fetched or updated, it's considered fresh.
 
