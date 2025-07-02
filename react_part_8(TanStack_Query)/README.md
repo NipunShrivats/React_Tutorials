@@ -72,3 +72,13 @@ It is a configuration option that determines how long fetched data is considered
 2. Stale Data: After the staleTime duration(specified in milliseconds) elapses, the data is considered stale.
 
 3. Default Value: The default Staletime is 0ms, meaning data becomes stale immediately after being fetched, This ensures data is always up-to-date but can lead to frequent refetching
+
+# Polling
+
+1. In React Query, polling refers to the technique of fetching data from an API at regulr intervals to keep the UI up-to-date with the latest information.
+2. This is especially useful for scenarios where data changes frequently and you want to display real-time updates without requiring the user to manually refresh the page.
+
+### "refetchInterval" option:
+
+The simplest way to enable polling is to pass the "refetchInterval" option to the "useQuery" hook.
+This option specifies the interval (in ms)
