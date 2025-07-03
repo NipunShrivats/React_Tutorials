@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./todo.css";
+import "./Todo.css";
 import Time from "./Time";
 import Form from "./Form";
 import List from "./List";

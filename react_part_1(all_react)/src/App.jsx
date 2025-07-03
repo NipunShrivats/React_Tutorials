@@ -25,7 +25,7 @@ import UseState_Challange from "./Components/6_UseState_Hook//UseState_Challange
 // -----------------------------------------------------
 import ToggleSwitch from "./Components/7_MiniProject_ToggleSwitch/ToggleSwitch";
 // -----------------------------------------------------
-import Todo from "./Components/8_MiniProjecft_ToDoApp/Todo";
+import Todo from "./Components/8_MiniProjecft_TodoApp/Todo";
 // -----------------------------------------------------
 import SpreadOperator from "./Components/9_Spread_Operator/Main";
 // -----------------------------------------------------
@@ -38,6 +38,8 @@ import HowTo from "./Components/11_React_Forms/2_RegistrationForm/HowTo";
 import LoginForm from "./Components/11_React_Forms/3_LoginForm/LoginForm";
 import ContactForm1 from "./Components/11_React_Forms/4_ContactForm/ContactForm1";
 import ContactForm2 from "./Components/11_React_Forms/4_ContactForm/ContactForm2";
+
+import FormButtons from "./Components/11_React_Forms/5_FormButtons/FormButtons";
 // -----------------------------------------------------
 import UseEffectHook from "./Components/12_UseEffect_Hook/UseEffectHook";
 import UseEffect_Challenge from "./Components/12_UseEffect_Hook/UseEffect_Challenge";
@@ -136,12 +138,13 @@ export default function App() {
       {/* ---------- d. Contact Form ----------*/}
       {/* <ContactForm1 /> */}
       {/* <ContactForm2 /> */}
+      <FormButtons />
 
       {/* ---------- 12. UseEffect Hook ----------*/}
       {/* <UseEffectHook /> */}
       {/* <UseEffect_Challenge /> */}
       {/* <Cleanup /> */}
-      <UseLayoutEffectHook />
+      {/* <UseLayoutEffectHook /> */}
 
       {/* ---------- 13. Fetching API ----------*/}
       {/* <HowNotToFetchAPI /> */}
