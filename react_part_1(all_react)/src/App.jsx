@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import ReactBasic_tut_1 from "./Components/1_Basic/Components_Fragments_1";
 import DynamicValues_2 from "./Components/1_Basic/DynamicValues_2";
@@ -8,6 +8,15 @@ import ImportExport from "./Components/1_Basic/Import_Export_4/Master";
 import NetflixSeries from "./Components/2_map_in_JSX/Main";
 // -----------------------------------------------------
 import PropsInJSX from "./Components/3_Props/Main";
+import User from "./Components/3.1_Props/User";
+let userObject = {
+  name: "Kapil Kumar",
+  age: "23",
+  email: "kapil69kumar@gmail.com",
+};
+
+let collegeList = ["IIT", "GEHU", "DU", "IP", "NIT"];
+
 // -----------------------------------------------------
 import ConditionalStyling from "./Components/4_Styling/Conditional_styling/Conditional_Styling";
 import Module from "./Components/4_Styling/CSS_Modules/Module";
@@ -81,9 +90,13 @@ import Together from "./Components/23_Memo/UsingTogether/ReactMemo";
 // -----------------------------------------------------
 import UseCallback_Hook from "./Components/24_UseCallBack_Hook/UseCallback";
 import UseLayoutEffectHook from "./Components/12_UseEffect_Hook/UseLayoutEffectHook";
+import College from "./Components/3.1_Props/College";
+import Student from "./Components/3.1_Props/Student";
 // -----------------------------------------------------
 
 export default function App() {
+  // for part 3.1 props
+  const [student, setStudent] = useState();
   return (
     <>
       {/* ---------------------- 1. Basic ---------------------- */}
@@ -97,6 +110,25 @@ export default function App() {
 
       {/* ---------------------- 3. Props ---------------------- */}
       {/* <PropsInJSX /> */}
+
+      {/* part1 */}
+      {/* <User name={"Anil Sidhu"} age={"22"} /> */}
+
+      {/* part2 - passing props in object */}
+      <User userDetails={userObject} />
+      <College collegeName={collegeList} />
+
+      {student && <Student stuName={student} />}
+      <button
+        onClick={() => setStudent("Monkey Kapoor")}
+        style={{ border: "2px solid red" }}
+      >
+        click to add
+      </button>
+
+      <button onClick={() => setStudent()} style={{ border: "2px solid red" }}>
+        click to remove
+      </button>
 
       {/* ---------------------- 4. Conditional Styling ---------------------- */}
       {/* <ConditionalStyling /> */}
@@ -138,7 +170,7 @@ export default function App() {
       {/* ---------- d. Contact Form ----------*/}
       {/* <ContactForm1 /> */}
       {/* <ContactForm2 /> */}
-      <FormButtons />
+      {/* <FormButtons /> */}
 
       {/* ---------- 12. UseEffect Hook ----------*/}
       {/* <UseEffectHook /> */}
