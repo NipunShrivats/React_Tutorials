@@ -7,8 +7,8 @@ import ImportExport from "./Components/1_Basic/Import_Export_4/Master";
 // -----------------------------------------------------
 import NetflixSeries from "./Components/2_map_in_JSX/Main";
 // -----------------------------------------------------
-import PropsInJSX from "./Components/3_Props/Main";
-import User from "./Components/3.1_Props/User";
+import PropsInJSX from "./Components/3.1_Props/Main";
+import User from "./Components/3.3_Props/User";
 let userObject = {
   name: "Kapil Kumar",
   age: "23",
@@ -16,6 +16,14 @@ let userObject = {
 };
 
 let collegeList = ["IIT", "GEHU", "DU", "IP", "NIT"];
+
+import User3_2 from "./Components/3.2_props/User";
+
+import Parent from "./Components/3.4_props/Parent";
+import Child from "./Components/3.4_props/Child";
+
+import AddUser from "./Components/3.5_LiftingStateUp/AddUser";
+import DisplayUser from "./Components/3.5_LiftingStateUp/DisplayUser";
 
 // -----------------------------------------------------
 import ConditionalStyling from "./Components/4_Styling/Conditional_styling/Conditional_Styling";
@@ -90,13 +98,17 @@ import Together from "./Components/23_Memo/UsingTogether/ReactMemo";
 // -----------------------------------------------------
 import UseCallback_Hook from "./Components/24_UseCallBack_Hook/UseCallback";
 import UseLayoutEffectHook from "./Components/12_UseEffect_Hook/UseLayoutEffectHook";
-import College from "./Components/3.1_Props/College";
-import Student from "./Components/3.1_Props/Student";
+import College from "./Components/3.3_Props/College";
+import Student from "./Components/3.3_Props/Student";
+import Wrapper from "./Components/3.2_props/Wrapper";
 // -----------------------------------------------------
 
 export default function App() {
   // for part 3.1 props
   const [student, setStudent] = useState();
+
+  // for part 3.4
+  const [user, setUser] = useState("");
   return (
     <>
       {/* ---------------------- 1. Basic ---------------------- */}
@@ -115,7 +127,7 @@ export default function App() {
       {/* <User name={"Anil Sidhu"} age={"22"} /> */}
 
       {/* part2 - passing props in object */}
-      <User userDetails={userObject} />
+      {/* <User userDetails={userObject} />
       <College collegeName={collegeList} />
 
       {student && <Student stuName={student} />}
@@ -128,7 +140,24 @@ export default function App() {
 
       <button onClick={() => setStudent()} style={{ border: "2px solid red" }}>
         click to remove
-      </button>
+      </button> */}
+
+      {/* part3 - passing props in object */}
+      {/* <User3_2 name={"Anil Sidhu"} />
+      <User3_2 name={"Sam"} />
+      <User3_2 />
+
+      <Wrapper color={"orange"}>
+        <h1>yeh kamal ka tha!</h1>
+      </Wrapper> */}
+
+      {/* part 4 -child to parent */}
+
+      {/* <Parent /> */}
+
+      {/* part 5 - lifting state up */}
+      {/* <AddUser user={user} setUser={setUser} /> */}
+      {/* <DisplayUser user={user} setUser={setUser} /> */}
 
       {/* ---------------------- 4. Conditional Styling ---------------------- */}
       {/* <ConditionalStyling /> */}
