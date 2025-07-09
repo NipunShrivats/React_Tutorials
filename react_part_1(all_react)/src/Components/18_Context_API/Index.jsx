@@ -1,14 +1,15 @@
 import { createContext } from "react";
 
-// step 1 - create context
+// step1
 export const BioContext = createContext();
 
-// step 2 - provider for providing values to its children
+// step2
 export const BioProvider = ({ children }) => {
   const myName = "Nipun";
-  const age = 99;
+  const Age = 22;
+
   return (
-    <BioContext.Provider value={{ myName, age }}>
+    <BioContext.Provider value={{ myName, Age }}>
       {children}
     </BioContext.Provider>
   );

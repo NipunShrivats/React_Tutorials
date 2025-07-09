@@ -10,6 +10,7 @@
 
 #### 1. Logical OR (||)
 
+natu
 syntax: exp1 || exp2
 rule: if exp1 == true return exp1, otherwise return exp2.
 

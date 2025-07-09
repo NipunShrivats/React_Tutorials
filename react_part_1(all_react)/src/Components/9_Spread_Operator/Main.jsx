@@ -26,6 +26,7 @@ export default function Main() {
   const person = { name: "john", age: 30 };
   const updatePerson = { ...person, age: person.age + 1 };
   console.log(updatePerson);
+
   return (
     <>
       <div>hi</div>

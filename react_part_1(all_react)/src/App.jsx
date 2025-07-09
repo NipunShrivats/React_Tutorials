@@ -79,9 +79,9 @@ import PropDrilling from "./Components/17_Prop_Drilling/PropDrilling";
 // import Home from "./Components/18_Context_API/Home";
 // import Services from "./Components/18_Context_API/Services";
 // -----------------------------------------------------
-// import { BioProvider } from "./Components/19_Custom_Hooks/Index";
-// import Home from "./Components/19_Custom_Hooks/Home";
-// import Services from "./Components/19_Custom_Hooks/Services";
+import { BioProvider } from "./Components/19_Custom_Hooks/Index";
+import Home from "./Components/19_Custom_Hooks/Home";
+import Services from "./Components/19_Custom_Hooks/Services";
 // -----------------------------------------------------
 // import { BioProvider } from "./Components/20_Use_API/Index";
 // import Home from "./Components/20_Use_API/Home";
@@ -232,10 +232,11 @@ export default function App() {
       </BioProvider> */}
 
       {/* ---------- 19. Custom Hooks ----------*/}
-      {/* <BioProvider>
+
+      <BioProvider>
         <Home />
+        <Services />
       </BioProvider>
-      <Services /> */}
 
       {/* ---------- 20. use API/Hook ----------*/}
       {/* <BioProvider>
