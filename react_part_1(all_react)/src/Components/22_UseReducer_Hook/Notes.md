@@ -12,4 +12,4 @@
 
 #### syntax:
 
-const[state, dispatch] = useReducer(reducer, initialState);
+const[state, dispatch] = useReducer(reducer function, initialState);

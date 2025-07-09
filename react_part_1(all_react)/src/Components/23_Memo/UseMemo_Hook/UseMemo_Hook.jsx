@@ -10,6 +10,8 @@ const ExpensiveComponent = () => {
     }
     return i;
   };
+
+  // here used useMemo
   const total = useMemo(() => sum(), []);
   console.log(total);
   return <p>sum:{total}</p>;
