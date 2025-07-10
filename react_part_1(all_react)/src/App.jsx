@@ -66,6 +66,7 @@ import HowNotToFetchAPI from "./Components/13_Fetch_API/HowNotToFetchAPI";
 import HowToFetchAPI from "./Components/13_Fetch_API/HowToFetchAPI";
 import PokemonDemo from "./Components/13_Fetch_API/PokemonDemo";
 import PokemonAPI from "./Components/13_Fetch_API/Pokemon_API/PokemonAPI";
+import FetchPractice from "./Components/13_Fetch_API/FetchPractice";
 // -----------------------------------------------------
 import UseRef_Hook from "./Components/14_UseRef_Hook/UseRef";
 // -----------------------------------------------------
@@ -101,6 +102,7 @@ import UseLayoutEffectHook from "./Components/12_UseEffect_Hook/UseLayoutEffectH
 import College from "./Components/3.3_Props/College";
 import Student from "./Components/3.3_Props/Student";
 import Wrapper from "./Components/3.2_props/Wrapper";
+
 // -----------------------------------------------------
 
 export default function App() {
@@ -212,6 +214,7 @@ export default function App() {
       {/* <HowToFetchAPI /> */}
       {/* <PokemonDemo /> */}
       {/* <PokemonAPI /> */}
+      <FetchPractice />
 
       {/* ---------- 14. useRef Hook ----------*/}
       {/* <UseRef_Hook /> */}
@@ -233,10 +236,10 @@ export default function App() {
 
       {/* ---------- 19. Custom Hooks ----------*/}
 
-      <BioProvider>
+      {/* <BioProvider>
         <Home />
         <Services />
-      </BioProvider>
+      </BioProvider> */}
 
       {/* ---------- 20. use API/Hook ----------*/}
       {/* <BioProvider>
