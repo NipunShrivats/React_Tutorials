@@ -1,0 +1,15 @@
+.title {
+    text-decoration: none;
+}
+
+.header-box {
+
+    list-Style: none;
+    display: flex;
+    gap: 2rem;
+
+    .link-main {
+        text-decoration: none;
+        color: black;
+    }
+}

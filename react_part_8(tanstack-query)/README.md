@@ -32,10 +32,6 @@
 3. It provides a centralized store for managing and chaching asynchronous data in our application.
 4. syntax:-
 
-   <QueryClientProvider client={queryClinet}>
-   <RouterProvider router={router}></RouterProvider>
-   </QueryClientProvider>
-
 ## QueryClientProvider
 
 1. This component is a part of react-query and is used to provide the QueryClient instance to your entire React app or aportion of it.
@@ -45,6 +41,18 @@
 
 1. This creates a new QueryClient instance with default settings.
 2. We can configure it with options if needed (eg. setting cache time, stale time, etc)
+
+## Syntax:-
+
+```
+export default function App() {
+   return (
+      <QueryClientProvider client={new QueryClient()}>
+         <RouterProvider router={router} />
+      </QueryClientProvider>
+   );
+}
+```
 
 # gcTime (Garbage Collection Time)
 

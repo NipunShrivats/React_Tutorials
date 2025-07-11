@@ -1,5 +1,11 @@
 import React from "react";
 
 export default function Footer() {
-  return <div>Thi is Footer</div>;
+  return (
+    <>
+      <div>
+        <p>All rights reserved 2025</p>
+      </div>
+    </>
+  );
 }
