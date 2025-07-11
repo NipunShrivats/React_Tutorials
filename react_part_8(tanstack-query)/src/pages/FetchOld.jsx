@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { fetchPosts } from "../API/Api";
+import { fetchPosts } from "../API/api";
 import "../App.css";
 
 export default function FetchOld() {
@@ -26,13 +26,10 @@ export default function FetchOld() {
       <ol className="posts-ul">
         {posts.map((currData) => {
           return (
-            <>
-              <li key={currData.id} className="">
-                <p>{currData.title}</p>
-                <p>{currData.body}</p>
-              </li>
-              <hr />
-            </>
+            <li key={currData.id} className="">
+              <p>{currData.title}</p>
+              <p>{currData.body}</p>
+            </li>
           );
         })}
       </ol>

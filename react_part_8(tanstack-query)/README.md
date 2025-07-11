@@ -54,6 +54,14 @@ export default function App() {
 }
 ```
 
+# useQuery
+
+## queryKey
+
+1. The queryKey is typically an array or string that uniquely identifies a query. It allows React Query to determine if the data in the cache is associated with a particular request.
+
+2. used to cache data with a specific key and refresh or update data when certain dependencies change.
+
 # gcTime (Garbage Collection Time)
 
 1. The cacheTime is renamed as gcTime in v5 of React query
