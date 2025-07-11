@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchPosts } from "../API/Api";
+import "../App.css";
 
 export default function FetchOld() {
   const [posts, setPosts] = useState([]);
@@ -22,11 +23,11 @@ export default function FetchOld() {
 
   return (
     <>
-      <ul>
+      <ol className="posts-ul">
         {posts.map((currData) => {
           return (
             <>
-              <li key={currData.id}>
+              <li key={currData.id} className="">
                 <p>{currData.title}</p>
                 <p>{currData.body}</p>
               </li>
@@ -34,7 +35,7 @@ export default function FetchOld() {
             </>
           );
         })}
-      </ul>
+      </ol>
     </>
   );
 }
