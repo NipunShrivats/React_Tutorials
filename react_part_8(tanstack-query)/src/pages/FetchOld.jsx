@@ -23,6 +23,7 @@ export default function FetchOld() {
 
   return (
     <>
+      <h2 style={{ color: "red" }}>Only Axios</h2>
       <ol className="posts-ul">
         {posts.map((currData) => {
           return (

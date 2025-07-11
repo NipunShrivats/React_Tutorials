@@ -30,7 +30,9 @@ export default function UsingTanStack() {
     <div>
       <h2 style={{ color: "red" }}>Tanstack</h2>
       <ol>
-        {data.map((curElem) => {
+        {/* Meaning of data?.map(): It checks if data exists and isn’t null or
+        undefined before trying to run .map() on it. */}
+        {data?.map((curElem) => {
           const { id, title, body } = curElem;
           return (
             <li key={id}>
