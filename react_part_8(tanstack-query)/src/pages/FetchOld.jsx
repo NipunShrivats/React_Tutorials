@@ -18,5 +18,7 @@ export default function FetchOld() {
     getPostsData();
   }, []);
 
+  console.log(posts);
+
   return <>FetchOld</>;
 }
