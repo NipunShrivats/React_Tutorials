@@ -6,6 +6,7 @@ import MainLayout from "./components/Layout/MainLayout";
 import Home from "./pages/Home";
 import FetchNew from "./pages/FetchNew";
 import FetchOld from "./pages/FetchOld";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,7 @@ export default function App() {
   return (
     <QueryClientProvider client={new QueryClient()}>
       <RouterProvider router={router} />
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }

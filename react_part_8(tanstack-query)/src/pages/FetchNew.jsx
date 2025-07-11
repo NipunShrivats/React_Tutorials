@@ -18,13 +18,11 @@ export default function UsingTanStack() {
     queryFn: getPosts, // works like useEffect
   });
 
-  if (isPending) {
-    return <div>Loading posts...</div>;
-  }
-
-  if (isError) {
+  // isLoading --> isPending
+  // isInitialLoading --> isLoading
+  if (isPending) return <div>Loading posts...</div>;
+  if (isError)
     return <div>Error: {error.message || "Something is wrong!"}</div>;
-  }
 
   return (
     <div>
