@@ -20,5 +20,21 @@ export default function FetchOld() {
 
   console.log(posts);
 
-  return <>FetchOld</>;
+  return (
+    <>
+      <ul>
+        {posts.map((currData) => {
+          return (
+            <>
+              <li key={currData.id}>
+                <p>{currData.title}</p>
+                <p>{currData.body}</p>
+              </li>
+              <hr />
+            </>
+          );
+        })}
+      </ul>
+    </>
+  );
 }
