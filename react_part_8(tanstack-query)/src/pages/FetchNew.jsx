@@ -16,8 +16,10 @@ export default function UsingTanStack() {
   const { data, isPending, isError, error } = useQuery({
     queryKey: ["posts"], // works like useState
     queryFn: getPosts, // works like useEffect
-    gcTime: 1000, // in ms
-    staleTime: 5000,
+    // gcTime: 1000, // in ms
+    // staleTime: 5000,
+    refetchInterval: 1000,
+    refetchIntervalInBackground: true,
   });
 
   // isLoading --> isPending
