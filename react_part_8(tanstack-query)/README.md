@@ -54,7 +54,13 @@ export default function App() {
 }
 ```
 
-# useQuery
+# useQuery() hook
+
+1. It is a react hook from the react query(Tanstack) library that simplifies data fetching and caching in react apps.
+2. It's like having a smart assistant that handles API calls, loading states, error handling and background updates
+3. All in one neat package.
+
+#### reference link:- https://tanstack.com/query/v4/docs/framework/react/reference/useQuery
 
 ## queryKey
 
@@ -71,7 +77,7 @@ export default function App() {
 
 ### use Case:
 
-Imagine you are fetching a list of users. If u go back to the same page. react Query will show the saved list from the cache instead of reloading it from the server, making your app faster. if a new user is added, React Query will automatically update the list.
+Imagine you are fetching a list of users. If u go back to the same page. react Query will "show the saved lis"t from the cache "instead of reloading it from the server", making your app faster. if a new user is added, React Query will automatically update the list.
 
 ### Note:-
 
