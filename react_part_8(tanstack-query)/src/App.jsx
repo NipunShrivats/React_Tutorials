@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import FetchNew from "./pages/FetchNew";
 import FetchOld from "./pages/FetchOld";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import FetchNewUnique from "./components/UI/FetchNewUnique";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "fetchnew/",
         element: <FetchNew />,
+      },
+      {
+        path: "fetchnew/:id",
+        element: <FetchNewUnique />, //unique page for each selected data
       },
     ],
   },

@@ -2,24 +2,17 @@ import React from "react";
 import { fetchPosts } from "../API/api";
 import { useQuery } from "@tanstack/react-query";
 import "../App.css";
+import { NavLink } from "react-router-dom";
 
 export default function UsingTanStack() {
-  const getPosts = async () => {
-    try {
-      const res = await fetchPosts();
-      return res.status === 200 ? res.data : [];
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   const { data, isPending, isError, error } = useQuery({
     queryKey: ["posts"], // works like useState
-    queryFn: getPosts, // works like useEffect
+    queryFn: fetchPosts, // works like useEffect
+
     // gcTime: 1000, // in ms
     // staleTime: 5000,
-    refetchInterval: 1000,
-    refetchIntervalInBackground: true,
+    // refetchInterval: 1000,
+    // refetchIntervalInBackground: true,
   });
 
   // isLoading --> isPending
@@ -31,19 +24,21 @@ export default function UsingTanStack() {
   return (
     <div>
       <h2 style={{ color: "red" }}>Tanstack</h2>
-      <ol>
+      <ul className="fetchnew-box">
         {/* Meaning of data?.map(): It checks if data exists and isn’t null or
         undefined before trying to run .map() on it. */}
         {data?.map((curElem) => {
           const { id, title, body } = curElem;
           return (
-            <li key={id}>
-              <p>{title}</p>
-              <p>{body}</p>
+            <li key={id} className="fetchnew-li">
+              <NavLink to={`/fetchnew/${id}`} className="fetchnew-link">
+                <p>{title}</p>
+                <p>{body}</p>
+              </NavLink>
             </li>
           );
         })}
-      </ol>
+      </ul>
     </div>
   );
 }

@@ -13,3 +13,29 @@
         color: black;
     }
 }
+
+.fetchnew-box {
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style: none;
+
+}
+
+.fetchnew-li {
+    /* border: 2px solid red; */
+    background-color: rgb(37, 34, 192);
+    padding: 1rem;
+}
+
+.fetchnew-li:hover {
+    transition: all .3s;
+    transform: scale(1.05);
+}
+
+.fetchnew-link {
+    color: white;
+    text-decoration: none;
+
+}
