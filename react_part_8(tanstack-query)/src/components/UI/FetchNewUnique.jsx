@@ -8,6 +8,8 @@ export default function FetchNewUnique() {
   const { data, isPending, isError, error } = useQuery({
     queryKey: ["post"],
     queryFn: () => fetchPostsUnique(id),
+    // refetchInterval: 1000,
+    // refetchIntervalInBackground: true,
   });
 
   if (isPending) return <div>Loading post...</div>;
