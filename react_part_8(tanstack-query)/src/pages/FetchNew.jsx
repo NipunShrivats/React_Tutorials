@@ -1,11 +1,19 @@
 import React, { useState } from "react";
-import { fetchPosts } from "../API/api";
-import { keepPreviousData, useQuery } from "@tanstack/react-query";
+import { deletePost, fetchPosts } from "../API/api";
+import {
+  keepPreviousData,
+  useMutation,
+  useQuery,
+  useQueryClient,
+} from "@tanstack/react-query";
 import "../App.css";
 import { NavLink } from "react-router-dom";
 
 export default function UsingTanStack() {
   const [pageNo, setPageNo] = useState(0);
+
+  // use for clearing the cache after deleting the data
+  const queryClient = useQueryClient();
 
   const { data, isPending, isError, error } = useQuery({
     queryKey: ["posts", pageNo], // works like useState
@@ -16,6 +24,17 @@ export default function UsingTanStack() {
     // staleTime: 5000,
     // refetchInterval: 1000,
     // refetchIntervalInBackground: true,
+  });
+
+  //! Mutation function to delete the posts
+  const deleteMutation = useMutation({
+    mutationFn: (id) => deletePost(id),
+    onSuccess: (data, id) => {
+      // console.log(data, id);
+      queryClient.setQueryData(["posts", pageNo], (curElem) => {
+        return curElem.filter((post) => post.id !== id);
+      });
+    },
   });
 
   if (isPending) return <div>Loading posts...</div>;
@@ -33,11 +52,21 @@ export default function UsingTanStack() {
             const { id, title, body } = curElem;
             return (
               <li key={id} className="fetchnew-li">
-                <NavLink to={`/fetchnew/${id}`} className="fetchnew-link">
-                  <p>{id}</p>
-                  <p>{title}</p>
-                  <p>{body}</p>
-                </NavLink>
+                <p>{id}</p>
+                <p>{title}</p>
+                <p>{body}</p>
+                <button className="view-more">
+                  <NavLink to={`/fetchnew/${id}`} className="fetchnew-link">
+                    View More...
+                  </NavLink>
+                </button>
+
+                <button
+                  onClick={() => deleteMutation.mutate(id)}
+                  className="delete-btn"
+                >
+                  Delete
+                </button>
               </li>
             );
           })}

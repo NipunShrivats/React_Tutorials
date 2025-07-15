@@ -29,16 +29,12 @@
     padding: 1rem;
 }
 
-.fetchnew-li:hover {
+/* .fetchnew-li:hover {
     transition: all .3s;
     transform: scale(1.05);
-}
+} */
 
-.fetchnew-link {
-    color: white;
-    text-decoration: none;
 
-}
 
 .page {
     display: flex;
@@ -51,4 +47,23 @@
         height: 2.5rem;
         cursor: pointer;
     }
+}
+
+.view-more {
+
+    width: 8rem;
+    height: 2rem;
+    cursor: pointer;
+
+    .fetchnew-link {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+    }
+}
+
+.delete-btn {
+    width: 8rem;
+    height: 2rem;
+    cursor: pointer;
+
 }

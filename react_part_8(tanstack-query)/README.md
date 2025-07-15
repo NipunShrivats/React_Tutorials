@@ -106,3 +106,42 @@ It is a configuration option that determines how long fetched data is considered
 2. This option specifies the interval (in ms) at which react Query will fetch data automatically.
 
 ### "refetchIntervalInBackground" option
+
+1. It’s a configuration option you use alongside refetchInterval.
+2. It determines whether polling continues even when the browser window/tab is in the background.
+
+# useMutation Hook
+
+1. It is used for operations that modify data, like create, update and delete (CRUD operations)
+
+syntax:
+
+```
+const mutation = useMutation(mutationFn,{
+   // optional configuration options
+})
+
+```
+
+we can provide various configuration options to customize the behaviour of the mutation, such as:
+
+1. onSuccess: A callback function that runs when the mutation is successful.
+2. onError: A callback function that runs if the mutation fails.
+3. onSettled: A callback function that runs regardless of success or failure.
+4. mutationKey: A unique key to identify the mutation in the cache.
+
+## Mutate() function
+
+1. The mutate() function is used to execute the mutation in react Query.
+   The process is the same whether you're:
+   a. Deleting data,
+   b. Updating data
+   c. Creating new data
+
+2. When we call .mutate(), it tells React Query to run the mutation function defined inside the useMutation hook
+
+3. This is needed because the mutation is an action that changes data, unlike queries, which are used to fetch data and are often outo-executed.
+
+## useQueryClient()
+
+The useQueryClient() hook is part of React Query (now called TanStack Query), and it gives you access to the QueryClient instance that’s managing your app’s data fetching, caching, and synchronization.

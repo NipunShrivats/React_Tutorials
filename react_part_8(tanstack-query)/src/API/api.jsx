@@ -33,3 +33,8 @@ export const fetchPostsUnique = async (id) => {
     console.log(error);
   }
 };
+
+// to delete the posts
+export const deletePost = (id) => {
+  return api.delete(`/posts/${id}`);
+};
