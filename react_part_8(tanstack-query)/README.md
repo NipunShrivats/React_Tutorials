@@ -145,3 +145,17 @@ we can provide various configuration options to customize the behaviour of the m
 ## useQueryClient()
 
 The useQueryClient() hook is part of React Query (now called TanStack Query), and it gives you access to the QueryClient instance that’s managing your app’s data fetching, caching, and synchronization.
+
+### PUT VS PATCH
+
+PUT: Full Update
+
+1. Replaces the entire resource with the data you send.
+2. If fields are missing in the request, they may be removed or reset in the stored resource.
+3. Ideal when you know the complete state of the resource.
+
+PATCH: Partial Update
+
+1. Updates only the fields you specify.
+2. The rest of the resource stays untouched.
+3. Useful for small changes or when modifying just a few fields.

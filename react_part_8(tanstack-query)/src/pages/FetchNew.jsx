@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { deletePost, fetchPosts } from "../API/api";
+import { deletePost, fetchPosts, updatePost } from "../API/api";
 import {
   keepPreviousData,
   useMutation,
@@ -26,13 +26,28 @@ export default function UsingTanStack() {
     // refetchIntervalInBackground: true,
   });
 
-  //! Mutation function to delete the posts
+  // 1. Mutation function to delete the posts
   const deleteMutation = useMutation({
     mutationFn: (id) => deletePost(id),
     onSuccess: (data, id) => {
       // console.log(data, id);
       queryClient.setQueryData(["posts", pageNo], (curElem) => {
-        return curElem.filter((post) => post.id !== id);
+        return curElem?.filter((post) => post.id !== id);
+      });
+    },
+  });
+
+  // 2. Mutation function to update the posts
+  const updateMutation = useMutation({
+    mutationFn: (id) => updatePost(id),
+    onSuccess: (apiData, postId) => {
+      // console.log(apiData, postId);
+      queryClient.setQueryData(["posts", pageNo], (postData) => {
+        return postData?.map((curPost) => {
+          return curPost.id == postId
+            ? { ...curPost, title: apiData.data.title }
+            : curPost;
+        });
       });
     },
   });
@@ -63,9 +78,15 @@ export default function UsingTanStack() {
 
                 <button
                   onClick={() => deleteMutation.mutate(id)}
-                  className="delete-btn"
+                  className="Mutation-btn"
                 >
                   Delete
+                </button>
+                <button
+                  onClick={() => updateMutation.mutate(id)}
+                  className="Mutation-btn"
+                >
+                  Update
                 </button>
               </li>
             );
