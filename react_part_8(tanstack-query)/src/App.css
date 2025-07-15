@@ -39,3 +39,16 @@
     text-decoration: none;
 
 }
+
+.page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    button {
+        width: 8rem;
+        height: 2.5rem;
+        cursor: pointer;
+    }
+}

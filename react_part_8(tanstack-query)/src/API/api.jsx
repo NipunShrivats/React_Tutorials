@@ -3,19 +3,31 @@ import axios from "axios";
 const api = axios.create({
   baseURL: "https://jsonplaceholder.typicode.com",
 });
-export const fetchPosts = async () => {
+
+// Main fetch
+// export const fetchPosts = async () => {
+//   try {
+//     const res = await api.get("/posts");
+//     return res.status === 200 ? res.data : [];
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// pagination based fetch
+export const fetchPosts = async (pageNo) => {
   try {
-    const res = await api.get("/posts");
+    const res = await api.get(`/posts?_start=${pageNo}&_limit=3`);
     return res.status === 200 ? res.data : [];
   } catch (error) {
     console.log(error);
   }
 };
 
+// Individual data after clicking
 export const fetchPostsUnique = async (id) => {
   try {
     const res = await api.get(`/posts/${id}`);
-    // return res.status === 200 ? console.log(res.data) : [];
     return res.status === 200 ? res.data : [];
   } catch (error) {
     console.log(error);
