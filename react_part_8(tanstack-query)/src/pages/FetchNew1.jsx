@@ -9,7 +9,7 @@ import {
 import "../App.css";
 import { NavLink } from "react-router-dom";
 
-export default function UsingTanStack() {
+export default function FetchNew1() {
   const [pageNo, setPageNo] = useState(0);
 
   // use for clearing the cache after deleting the data
@@ -26,25 +26,27 @@ export default function UsingTanStack() {
     // refetchIntervalInBackground: true,
   });
 
-  // 1. Mutation function to delete the posts
+  // Mutation Function Creation
+  // 1. delition
   const deleteMutation = useMutation({
     mutationFn: (id) => deletePost(id),
     onSuccess: (data, id) => {
-      // console.log(data, id);
+      console.log(data, id);
       queryClient.setQueryData(["posts", pageNo], (curElem) => {
         return curElem?.filter((post) => post.id !== id);
       });
     },
   });
 
-  // 2. Mutation function to update the posts
+  // 2. updation
   const updateMutation = useMutation({
     mutationFn: (id) => updatePost(id),
-    onSuccess: (apiData, postId) => {
-      // console.log(apiData, postId);
-      queryClient.setQueryData(["posts", pageNo], (postData) => {
-        return postData?.map((curPost) => {
-          return curPost.id == postId
+    onSuccess: (apiData, apiId) => {
+      console.log(apiData, apiId);
+
+      queryClient.setQueriesData(["posts", pageNo], (postData) => {
+        return postData.map((curPost) => {
+          return curPost.id == apiId
             ? { ...curPost, title: apiData.data.title }
             : curPost;
         });
@@ -77,14 +79,14 @@ export default function UsingTanStack() {
                 </button>
 
                 <button
-                  onClick={() => deleteMutation.mutate(id)}
                   className="Mutation-btn"
+                  onClick={() => deleteMutation.mutate(id)}
                 >
                   Delete
                 </button>
                 <button
-                  onClick={() => updateMutation.mutate(id)}
                   className="Mutation-btn"
+                  onClick={() => updateMutation.mutate(id)}
                 >
                   Update
                 </button>

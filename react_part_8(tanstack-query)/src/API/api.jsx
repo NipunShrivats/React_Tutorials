@@ -5,17 +5,17 @@ const api = axios.create({
 });
 
 // Main fetch
-// export const fetchPosts = async () => {
-//   try {
-//     const res = await api.get("/posts");
-//     return res.status === 200 ? res.data : [];
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
+export const fetchPosts = async () => {
+  try {
+    const res = await api.get("/posts");
+    return res.status === 200 ? res.data : [];
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 // pagination based fetch
-export const fetchPosts = async (pageNo) => {
+export const fetchPostsp = async (pageNo) => {
   try {
     const res = await api.get(`/posts?_start=${pageNo}&_limit=3`);
     return res.status === 200 ? res.data : [];

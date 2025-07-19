@@ -4,7 +4,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import MainLayout from "./components/Layout/MainLayout";
 import Home from "./pages/Home";
-import FetchNew from "./pages/FetchNew";
+// import FetchNew from "./pages/FetchNew";
+import FetchNew1 from "./pages/FetchNew1";
 import FetchOld from "./pages/FetchOld";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import FetchNewUnique from "./components/UI/FetchNewUnique";
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path: "fetchnew/",
-        element: <FetchNew />,
+        element: <FetchNew1 />,
       },
       {
         path: "fetchnew/:id",
