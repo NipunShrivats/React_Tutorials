@@ -1,0 +1,14 @@
+[
+  {
+    "fruits": {
+      "apple": ["apple1", "apple2", "apple3"],
+      "mango": ["mango1", "mango2", "mango3"],
+      "banana": ["Banana1", "Banana2", "Banana3"]
+    },
+    "vehicle": {
+      "car": ["Car1", "Car2", "Car3"],
+      "bike": ["Bike1", "Bike2", "Bike3"],
+      "Cycle": ["Cycle1", "Cycle2", "Cycle3"]
+    }
+  }
+]
