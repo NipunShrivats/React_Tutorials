@@ -7,7 +7,8 @@ import Home from "./pages/Home";
 // import FetchNew from "./pages/FetchNew";
 import FetchNew from "./pages/FetchNew";
 import FetchOld from "./pages/FetchOld";
-import InfiniteScroll from "./pages/InfiniteScroll";
+// import InfiniteScroll1 from "./pages/InfiniteScroll1";
+import InfiniteScroll2 from "./pages/InfiniteScroll2";
 
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import FetchNewUnique from "./components/UI/FetchNewUnique";
@@ -35,7 +36,8 @@ const router = createBrowserRouter([
       },
       {
         path: "infinitescroll",
-        element: <InfiniteScroll />,
+        // element: <InfiniteScroll1 />,
+        element: <InfiniteScroll2 />,
       },
     ],
   },
