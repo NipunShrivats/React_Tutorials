@@ -52,7 +52,7 @@ const infiniteApi = axios.create({
 });
 export const fetchUsers = async ({ pageParam = 1 }) => {
   try {
-    const res = await infiniteApi.get(`users?per_page=10&page=${pageParam}`);
+    const res = await infiniteApi.get(`users?per_page=20&page=${pageParam}`);
     // console.log(res.data);
     return res.data;
   } catch (error) {
