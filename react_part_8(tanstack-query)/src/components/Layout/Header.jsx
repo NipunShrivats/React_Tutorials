@@ -25,6 +25,13 @@ export default function Header() {
         </li>
         <li>
           <button>
+            <NavLink to={"infinitescroll"} className="link-main">
+              InfiniteScroll
+            </NavLink>
+          </button>
+        </li>
+        <li>
+          <button>
             <NavLink to={"/"} className="link-main">
               Go Home
             </NavLink>

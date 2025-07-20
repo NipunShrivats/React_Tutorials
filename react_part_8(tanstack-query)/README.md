@@ -159,3 +159,23 @@ PATCH: Partial Update
 1. Updates only the fields you specify.
 2. The rest of the resource stays untouched.
 3. Useful for small changes or when modifying just a few fields.
+
+# useInfiniteQuery
+
+--> Process
+
+1. first render
+2. QueryFn will fetch 1st page
+3. calculate Next page value with "getNextPageParam"
+4. check if it has reached bottom & check if there is any next page "hasNextPage"
+5. if yes then "fetchNextPage"
+
+## Scroll Events
+
+1. `window.innerHeight`: The height of the visible part of the website(the viewpot)
+
+2. `window.scrollY`: The amount of pixels that user has scrolled down the page
+
+3. `document.documentElement.scrollHeight`: The total height of the webpage, including the part not visible without scrolling.
+
+when the sum of `window.innerHeight` & `window.scrollY` is approx equal to `document.documentElement.scrollHeight -1`, the user is near the bottom of the page

@@ -5,8 +5,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import MainLayout from "./components/Layout/MainLayout";
 import Home from "./pages/Home";
 // import FetchNew from "./pages/FetchNew";
-import FetchNew1 from "./pages/FetchNew1";
+import FetchNew from "./pages/FetchNew";
 import FetchOld from "./pages/FetchOld";
+import InfiniteScroll from "./pages/InfiniteScroll";
+
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import FetchNewUnique from "./components/UI/FetchNewUnique";
 
@@ -25,11 +27,15 @@ const router = createBrowserRouter([
       },
       {
         path: "fetchnew/",
-        element: <FetchNew1 />,
+        element: <FetchNew />,
       },
       {
         path: "fetchnew/:id",
         element: <FetchNewUnique />, //unique page for each selected data
+      },
+      {
+        path: "infinitescroll",
+        element: <InfiniteScroll />,
       },
     ],
   },
