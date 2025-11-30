@@ -5,7 +5,7 @@ export default function Home() {
   const { myName, Age } = useContext(BioContext);
   return (
     <div>
-      My Name: {myName}, {Age}
+      My Name: {myName}, {Age} - HOME PAGE
     </div>
   );
 }

@@ -5,7 +5,7 @@ export default function Services() {
   const { myName, Age } = useContext(BioContext);
   return (
     <div>
-      Name: {myName}, {Age}
+      Name: {myName}, {Age} - SERVICE PAGE
     </div>
   );
 }

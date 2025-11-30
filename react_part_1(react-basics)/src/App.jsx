@@ -76,13 +76,13 @@ import UseId_Hook from "./Components/16_UseId_Hook/UseId";
 // -----------------------------------------------------
 import PropDrilling from "./Components/17_Prop_Drilling/PropDrilling";
 // -----------------------------------------------------
-// import { BioProvider } from "./Components/18_Context_API/Index";
-// import Home from "./Components/18_Context_API/Home";
-// import Services from "./Components/18_Context_API/Services";
+import { BioProvider } from "./Components/18_Context_API/Index";
+import Home from "./Components/18_Context_API/Home";
+import Services from "./Components/18_Context_API/Services";
 // -----------------------------------------------------
-import { BioProvider } from "./Components/19_Custom_Hooks/Index";
-import Home from "./Components/19_Custom_Hooks/Home";
-import Services from "./Components/19_Custom_Hooks/Services";
+// import { BioProvider } from "./Components/19_Custom_Hooks/Index";
+// import Home from "./Components/19_Custom_Hooks/Home";
+// import Services from "./Components/19_Custom_Hooks/Services";
 // -----------------------------------------------------
 // import { BioProvider } from "./Components/20_Use_API/Index";
 // import Home from "./Components/20_Use_API/Home";
@@ -214,7 +214,7 @@ export default function App() {
       {/* <HowToFetchAPI /> */}
       {/* <PokemonDemo /> */}
       {/* <PokemonAPI /> */}
-      <FetchPractice />
+      {/* <FetchPractice /> */}
 
       {/* ---------- 14. useRef Hook ----------*/}
       {/* <UseRef_Hook /> */}
@@ -228,18 +228,11 @@ export default function App() {
       {/* ---------- 17. Prop Drilling ----------*/}
       {/* <PropDrilling /> */}
 
-      {/* ---------- 18. Context API ----------*/}
-      {/* <BioProvider>
+      {/* ---------- 18. Context API & 19. Custom Hooks ----------*/}
+      <BioProvider>
         <Home />
         <Services />
-      </BioProvider> */}
-
-      {/* ---------- 19. Custom Hooks ----------*/}
-
-      {/* <BioProvider>
-        <Home />
-        <Services />
-      </BioProvider> */}
+      </BioProvider>
 
       {/* ---------- 20. use API/Hook ----------*/}
       {/* <BioProvider>
