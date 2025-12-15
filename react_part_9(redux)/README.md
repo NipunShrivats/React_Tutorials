@@ -63,3 +63,7 @@
 1. To use Redux in a React app, we need to connect redux's store and actions to React components.
 2. This allows components to access the global state and dispatch actions.
 3. npm install react-redux
+
+## Access redux State.
+
+1. useSelector() Hook
