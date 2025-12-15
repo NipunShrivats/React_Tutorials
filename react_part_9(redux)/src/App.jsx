@@ -1,8 +1,12 @@
 import React from "react";
-import "./Store.jsx";
+import ToDo from "./component/ToDo";
 
 const App = () => {
-  return <div>Hello Redux</div>;
+  return (
+    <div>
+      <ToDo />
+    </div>
+  );
 };
 
 export default App;
