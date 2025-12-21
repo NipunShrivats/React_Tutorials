@@ -1,3 +1,5 @@
+import { composeWithDevTools } from "@redux-devtools/extension";
+
 import { createStore } from "redux";
 
 /* eslint-disable no-case-declarations */
@@ -31,7 +33,8 @@ const taskReducer = (state = initialState, action) => {
 };
 
 // 2. Create the Redux Store using the reducer
-export const Store = createStore(taskReducer);
+export const Store = createStore(taskReducer, composeWithDevTools());
+console.log("-=->", Store);
 // 3. Create action functions
 // a. add func
 // eslint-disable-next-line react-refresh/only-export-components
