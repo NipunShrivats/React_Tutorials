@@ -64,6 +64,17 @@
 2. This allows components to access the global state and dispatch actions.
 3. npm install react-redux
 
-## Access redux State.
+## Access redux State - useSelector() Hook.
 
-1. useSelector() Hook
+1. used to read data from the redux store.
+2. syntax:-
+
+```
+const count = useSelector(state=> state.property);
+```
+
+3. We define a selector function that takes the entire redux store state as an argument and returns the specific piece of data we need.
+
+## Dispatch Actions - useDispatch() hook
+
+1. use the useDispatch hook to dispatch actions from a React component.
