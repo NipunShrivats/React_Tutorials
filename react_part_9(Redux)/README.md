@@ -19,8 +19,12 @@
 
 2. Action:-
    a. An Action is a plain JS Object that describes what happened.
-   b. Example: {type:"ADD_TODO", payload:"Learn Redux"}
-   c. Actions don't update the state directly, they just describe the event.
+   b. Example:
+   ```
+      {type:"ADD_TODO", payload:"Learn Redux"}
+   ```
+
+c. Actions don't update the state directly, they just describe the event.
 
 3. Dispatch:-
    a. The dispatch() function send the action to the Redux store.
